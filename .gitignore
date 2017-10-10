@@ -5,7 +5,6 @@
 .DS_Store
 
 ## Frontend
-distribution
 node_modules
 
 ## Backend
