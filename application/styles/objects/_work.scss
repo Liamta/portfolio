@@ -1,0 +1,199 @@
+// Config
+@import '../config/palette';
+
+// Mixins
+@import '../helpers/mixins/valign';
+@import '../helpers/mixins/aspect-ratio';
+
+// Functions
+@import '../helpers/functions/rem';
+@import '../helpers/functions/tracking';
+
+/**
+ * Object / Work
+ * Work section for viewing pieces of work
+ */
+.work {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 100vh;
+    background-color: $color-darkgrey;
+}
+
+.work__items {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
+
+.work__accents {
+    @include aspect-ratio(16, 8);
+    @include vertical-align(absolute);
+    right: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    max-width: 960px;
+    height: auto;
+    margin: auto;
+    opacity: 1;
+    transform: translateY(-50%);
+    transition: opacity 1500ms ease;
+    transition-delay: 500ms;
+    transform-style: preserve-3d;
+    perspective: 800px;
+
+    .transitioning & {
+        opacity: 0;
+        transition-delay: 0ms;
+    }
+
+}
+
+.work-accents__project {
+    top: -30px;
+    display: block;
+    color: rgba($color-white, .2);
+    font-size: calculate-rem(10px);
+    letter-spacing: tracking(100);
+    text-align: right;
+    text-transform: uppercase;
+
+    span {
+        color: rgba($color-white, .4);
+    }
+
+}
+
+.work__media {
+    @include aspect-ratio(16, 8);
+    @include vertical-align(absolute);
+    right: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    max-width: 960px;
+    height: auto;
+    margin: auto;
+    opacity: 1;
+    transform: translateY(-50%);
+    transition: opacity 1000ms ease, background-color 300ms ease;
+    transition-delay: 500ms;
+    transform-style: preserve-3d;
+    perspective: 800px;
+
+    .transitioning & {
+        background-color: $color-mediumgrey;
+        opacity: .25;
+        transition-delay: 0ms;
+    }
+
+}
+
+.work__video {
+    position: absolute;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    opacity: .5;
+    transition: opacity 300ms ease;
+
+    video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .transitioning & {
+        opacity: 0;
+    }
+
+}
+
+.work__pagination {
+    position: absolute;
+    right: 0;
+    bottom: 10%;
+    left: 0;
+    z-index: 3;
+    width: auto;
+    height: auto;
+    margin: auto;
+    text-align: center;
+}
+
+.work-pagination {
+    opacity: 1;
+    transition: opacity 300ms ease;
+    filter: blur(0);
+
+    &.loading {
+        opacity: 0;
+    }
+
+    .transitioning & {
+        opacity: .25;
+    }
+
+    &::before {
+        position: absolute;
+        top: -75px;
+        right: 0;
+        left: 0;
+        display: block;
+        width: 1px;
+        height: 50px;
+        margin: auto;
+        content: '';
+        background-color: $color-white;
+    }
+
+}
+
+.work-pagination__list {
+    position: absolute;
+    left: 50%;
+    display: block;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    transition: transform 300ms ease;
+}
+
+.work-pagination__item {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    margin: 0 20px;
+    border-radius: 100%;
+    background-color: $color-white;
+    opacity: .25;
+    transition: opacity 500ms ease, border 300ms ease, transform 300ms ease;
+    cursor: pointer;
+
+    &:first-of-type {
+        margin-left: 0;
+    }
+
+    &.active,
+    &:hover {
+        border: 2px solid $color-white;
+        background-color: transparent;
+        opacity: 1;
+        transform: scale(2.2);
+        transform-origin: center;
+    }
+
+    @media screen and (max-width: 480px) {
+        margin: 0 10px;
+    }
+
+}

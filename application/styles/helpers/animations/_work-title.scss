@@ -1,0 +1,23 @@
+/**
+ * Helpers / Animations / Work Title
+ * Work title specific animation
+ */
+
+@keyframes work-title {
+
+    0% {
+        opacity: 0;
+        filter: blur(10px);
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        top: 0;
+        opacity: 1;
+        filter: blur(0);
+    }
+
+}

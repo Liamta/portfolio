@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="initial-scale=1" />
+        <title>{% block title %}{% endblock %}</title>
+        <link rel="stylesheet" href="/assets/styles/styles.css" />
+    </head>
+    <body>
+
+    {% block page %}{% endblock %}
+
+        <script type="text/javascript" src="{{ env == 'production' ? '/assets/scripts/bundle.min.js' : '/assets/scripts/bundle.js' }}"></script>
+    </body>
+</html>

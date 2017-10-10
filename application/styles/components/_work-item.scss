@@ -1,0 +1,132 @@
+// Config
+@import '../config/palette';
+
+// Mixins
+@import '../helpers/mixins/valign';
+@import '../helpers/mixins/aspect-ratio';
+
+// Functions
+@import '../helpers/functions/rem';
+@import '../helpers/functions/tracking';
+
+// Animations
+@import '../helpers/animations/work-title';
+
+/**
+ * Component / Work Item
+ * Work item component
+ */
+.work-item {
+    @include vertical-align(absolute);
+    right: 0;
+    left: 0;
+    z-index: -9999;
+    width: 100%;
+    max-width: 960px;
+    height: auto;
+    margin: auto;
+    opacity: 0;
+    transition: opacity 300ms ease, z-index 100ms ease;
+    filter: drop-shadow(0 10px 20px rgba($color-black, .5));
+
+    &.active {
+        z-index: 1;
+        opacity: 1;
+    }
+
+}
+
+.work-item__content {
+    color: $color-white;
+    text-align: center;
+}
+
+.work-item__title,
+.work-item__subtitle {
+    margin: 0;
+    opacity: 0;
+    text-transform: uppercase;
+    user-select: none;
+    cursor: default;
+
+    .active & {
+        opacity: 1;
+    }
+
+}
+
+.work-item__btn {
+    position: relative;
+    margin-top: 50px;
+
+    @media screen and (max-width: 480px) {
+        margin-top: 25px;
+    }
+
+}
+
+.work-item__title {
+    opacity: 0;
+    font-size: calculate-rem(100px);
+
+    span {
+        margin-left: -20px;
+        opacity: 0;
+        font-weight: 800;
+        transition: opacity 300ms ease;
+
+        &:first-of-type {
+            margin-left: 0;
+        }
+
+    }
+
+    .active & {
+
+        span:nth-of-type(1) {
+            animation: work-title 1200ms linear 0ms 1 normal forwards;
+        }
+
+        span:nth-of-type(2) {
+            animation: work-title 1200ms linear 500ms 1 normal forwards;
+        }
+
+        span:nth-of-type(3) {
+            animation: work-title 1500ms linear 200ms 1 normal forwards;
+        }
+
+        span:nth-of-type(4) {
+            animation: work-title 1200ms linear 700ms 1 normal forwards;
+        }
+
+        span:nth-of-type(5) {
+            animation: work-title 1300ms linear 500ms 1 normal forwards;
+        }
+
+        span:nth-of-type(6) {
+            animation: work-title 1400ms linear 1000ms 1 normal forwards;
+        }
+
+        span:nth-of-type(7) {
+            animation: work-title 1200ms linear 1200ms 1 normal forwards;
+        }
+
+    }
+
+    @media screen and (max-width: 480px) {
+        font-size: calculate-rem(40px);
+
+        span {
+            margin-left: -5px;
+        }
+
+    }
+
+}
+
+.work-item__subtitle {
+    font-weight: 100;
+    font-size: calculate-rem(12px);
+    letter-spacing: tracking(50);
+    transition: opacity 500ms ease 500ms;
+}

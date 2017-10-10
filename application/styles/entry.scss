@@ -1,0 +1,21 @@
+/**
+ * Entry point for styles
+ */
+
+// Config - All variables stored here.
+
+// Vendor - Library/3rd party code.
+@import 'vendor/normalize';
+
+// Helpers - Helper classes, mixins, functions.
+
+// Global - Scaffolding, typography kept here.
+@import 'global/scaffolding';
+
+// Objects - Globally used, larger components (Grid, forms etc).
+@import 'objects/work';
+
+// Components - Small, reusable components.
+@import 'components/work-item';
+@import 'components/btn';
+@import 'components/nav';

@@ -1,0 +1,21 @@
+// Config
+@import '../config/font-family';
+
+// Helpers
+@import '../helpers/mixins/valign';
+
+/**
+ * Global / Scaffolding
+ *
+ * General scaffolding of the project.
+ */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 100%;
+    font-family: $font-primary;
+}
+

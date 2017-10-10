@@ -1,0 +1,23 @@
+# Editor Config
+
+root = true
+
+# Defaults
+[*]
+charset = utf-8
+indent_size = 4
+indent_style = space
+insert_final_newline = true
+
+# Configuration/Data files (JSON,YML etc).
+[*.{json,yaml,yml}]
+indent_size = 2
+insert_final_newline = false
+
+# Dot files and ENV files (JSON,YML etc).
+[.eslintrc]
+indent_size = 2
+insert_final_newline = false
+
+
+

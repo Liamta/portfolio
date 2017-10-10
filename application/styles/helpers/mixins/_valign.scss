@@ -1,0 +1,18 @@
+/**
+ * Helpers / Mixins / Vertical Align
+ *
+ * Vertical alignment mixin
+ */
+@mixin vertical-align($position: 'relative') {
+
+    @if ($position == 'relative' or $position == 'absolute') {
+        position: $position;
+        top: 50%;
+        transform: translateY(-50%);
+    } @else {
+        position: initial;
+        top: auto;
+        transform: none;
+    }
+
+}

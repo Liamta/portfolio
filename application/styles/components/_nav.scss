@@ -1,0 +1,85 @@
+// Config
+@import '../config/palette';
+@import '../config/depth';
+
+// Helpers
+@import '../helpers/functions/rem';
+@import '../helpers/functions/tracking';
+@import '../helpers/animations/contact-button';
+
+/**
+ * Component / Nav
+ */
+.nav {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: $depth-nav;
+    width: 100%;
+    height: auto;
+    padding: 0 0 15px 15px;
+}
+
+.nav__item {
+    position: relative;
+    top: 0;
+    display: block;
+    margin-top: 10px;
+    color: $color-white;
+    font-size: calculate-rem(14px);
+    letter-spacing: tracking(175);
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: top 300ms ease;
+
+    @media screen and (max-width: 480px) {
+        display: inline-block;
+        margin: 0 10px 0 0;
+    }
+
+    &:hover {
+
+        img {
+            opacity: 1;
+            animation: contact-button 400ms linear 0ms 1 normal forwards;
+        }
+
+        span:nth-of-type(1) {
+            animation: contact-button 500ms linear 0ms 1 normal forwards;
+        }
+
+        span:nth-of-type(2) {
+            animation: contact-button 500ms linear 50ms 1 normal forwards;
+        }
+
+        span:nth-of-type(3) {
+            animation: contact-button 500ms linear 100ms 1 normal forwards;
+        }
+
+        span:nth-of-type(4) {
+            animation: contact-button 500ms linear 150ms 1 normal forwards;
+        }
+
+        span:nth-of-type(5) {
+            animation: contact-button 500ms linear 200ms 1 normal forwards;
+        }
+
+        span:nth-of-type(6) {
+            animation: contact-button 500ms linear 250ms 1 normal forwards;
+        }
+
+        span:nth-of-type(7) {
+            animation: contact-button 500ms linear 300ms 1 normal forwards;
+        }
+
+    }
+
+    img {
+        display: block;
+        width: 100%;
+        max-width: 12px;
+        opacity: .6;
+        transition: opacity 200ms ease;
+    }
+
+}

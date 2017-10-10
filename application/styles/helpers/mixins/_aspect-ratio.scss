@@ -1,0 +1,32 @@
+/**
+ * Helpers / Mixins / Aspect Ratio
+ * Maintain an aspect ratio of an element (e.g. 16/9).
+ *
+ * @param $width aspect of the width
+ * @param $height aspect of the height
+ * @param $position position property (must be relative or absolute).
+ */
+@mixin aspect-ratio($width, $height, $position: relative) {
+
+    @if($position != relative or $position != absolute) {
+        position: relative;
+    } @else {
+        position: $position;
+    }
+
+    &:before {
+        display: block;
+        width: 100%;
+        padding-top: ($height / $width) * 100%;
+        content: '';
+    }
+
+    > * {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    }
+
+}

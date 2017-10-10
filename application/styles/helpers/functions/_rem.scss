@@ -1,0 +1,8 @@
+/**
+ * Helpers / Functions / Calculate Rem
+ * Converting pixel values to a more versatile REM value
+ */
+@function calculate-rem($size) {
+    $remSize: $size / 16px;
+    @return #{$remSize}rem;
+}
