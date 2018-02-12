@@ -55,16 +55,6 @@
 
 }
 
-.work-item__btn {
-    position: relative;
-    margin-top: 50px;
-
-    @media screen and (max-width: 480px) {
-        margin-top: 25px;
-    }
-
-}
-
 .work-item__title {
     opacity: 0;
     font-size: calculate-rem(100px);
@@ -129,4 +119,14 @@
     font-size: calculate-rem(12px);
     letter-spacing: tracking(50);
     transition: opacity 500ms ease 500ms;
+}
+
+.work-item__btn {
+    position: relative;
+    margin-top: 50px;
+
+    @media screen and (max-width: 480px) {
+        margin-top: 10px;
+    }
+
 }

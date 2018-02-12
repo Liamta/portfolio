@@ -23,8 +23,6 @@ export default class WorkItems {
         this.accents = this.container.querySelector('[data-work="accents"]');
         this.projectCount = this.accents.querySelector('[data-accent="project"]');
 
-        console.log(this.accents);
-
         // Generate Items
         this.itemsArr = this.generateItemsArray(this.items);
         this.itemsMap = this.generateItemsMap(this.items);

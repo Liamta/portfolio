@@ -51,4 +51,10 @@
 
     }
 
+    @media screen and (max-width: 480px) {
+        min-width: 75px;
+        padding: 4px 7px;
+        font-size: calculate-rem(8px);
+    }
+
 }
